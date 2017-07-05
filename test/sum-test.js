@@ -14,5 +14,15 @@ describe ('Sum', function() {
       expect(sum()).to.equal(0);
       assert.equal(sum(),0);
     });
-    
+
+    it ('Should not return undefined or NaN', function(){
+      expect(sum()).to.not.equal(undefined || NaN);
+      assert.not.equal(sum(),undefined || NaN);
+    });
+
+    it ('Parameters should be in one string', function(){
+      expect(sum()).not.to.be.a('string');
+      expect(sum()).not.to.be.a('object');
+      expect(sum()).not.to.be.a('array');
+    });
 });
